@@ -52,14 +52,14 @@ public class jCapture extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "IP", "CORREO", "PASSWORD", "PIN"
+                "IP", "CORREO", "PASSWORD", "PIN", "Fecha"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -76,6 +76,7 @@ public class jCapture extends javax.swing.JInternalFrame {
             jTCapture.getColumnModel().getColumn(1).setResizable(false);
             jTCapture.getColumnModel().getColumn(2).setResizable(false);
             jTCapture.getColumnModel().getColumn(3).setResizable(false);
+            jTCapture.getColumnModel().getColumn(4).setResizable(false);
         }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

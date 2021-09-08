@@ -26,7 +26,7 @@ public class Conexion {
                 private String user = "root";
                 private String pass = "p0s31d0n";
                 private String db = "maxmail";
-                private String url = "jdbc:mysql://localhost:3306/"
+                private String url = "jdbc:mysql://localhost:3307/"
             + db + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&"
             + "useLegacyDatetimeCode=false&serverTimezone=America/Mexico_City&useSSL=false&"
             + "allowPublicKeyRetrieval=true";
