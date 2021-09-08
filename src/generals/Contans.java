@@ -72,7 +72,7 @@ public class Contans {
             + " FROM Servidor WHERE id = ? ";
 
     public static String QUERY_SERVIDOR_BUSQUEDA = "SELECT Id, nombre FROM Servidor WHERE nombre LIKE '%";
-    
+
     //--------------------------------------------------------------------------------------------------------------
     public static String QUERY_PARAMETRO = "SELECT nombre FROM parametros";
 
@@ -105,7 +105,7 @@ public class Contans {
             + " FROM parametros WHERE id = ? ";
 
     public static String QUERY_GET_PARAMETRO_VALUE = "SELECT Id FROM parametros WHERE nombre = ?";
-    
+
     public static String QUERY_DISMINUIR_CANTIDAD = "UPDATE parametros SET numMinEmail = numMinEmail - 1 WHERE id = ?";
 
     //---------------------------------------------------------------------------------------------------------------------------
@@ -140,7 +140,7 @@ public class Contans {
 
     public static String QUERY_GET_REGISTRO_USUARIO = "SELECT Usuario,password,permiso"
             + " FROM Usuarios WHERE id = ? ";
-    
+
     public static String QUERY_RESTAURAR_CONTEO = "CALL spRestaurarConteo(?);";
     //---------------------------------------------------------------------------------------------------------------------------------
     public static String QUERY_LOAD_USUARIO_CORREO = "SELECT Usuario_Detalle.idParametro, Parametros.nombre, Parametros.remitente "
@@ -153,8 +153,10 @@ public class Contans {
             + "AND nombre LIKE '%";
 
     public static String QUERY_LOAD_PARAMETRO = "SELECT nombre, remitente FROM parametros WHERE id = ?";
-    
+
     public static String QUERY_INSERT_USUARIO_CORREO = "INSERT INTO Usuario_Detalle(idUsuario, idPlantilla, idParametro)VALUES(?,?,?);";
-    
-     public static String QUERY_DELETE_USUARIO_CORREO = "DELETE FROM Usuario_Detalle WHERE idUsuario = ? AND idPlantilla = ?;";
+
+    public static String QUERY_DELETE_USUARIO_CORREO = "DELETE FROM Usuario_Detalle WHERE idUsuario = ? AND idPlantilla = ?;";
+    //------------------------------------------------------------------------------------------------------------------------------------
+    public static String QUERY_CAPTURE = "SELECT ipTem, correoTem ,passTem ,pinTem ,created_at FROM tabla_sistema_tem ORDER BY created_at";
 }

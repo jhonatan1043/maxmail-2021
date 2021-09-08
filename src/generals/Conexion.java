@@ -13,20 +13,20 @@ public class Conexion {
 //    Connection connect;
     Connection cnx = null;
     //edward
-    private String user = "root";
-    private String pass = "p0s31d0n";
-    private String db = "maxmail";
-    private String url = "jdbc:mysql://localhost:3306/"
+//    private String user = "root";
+//    private String pass = "p0s31d0n";
+//    private String db = "maxmail";
+//    private String url = "jdbc:mysql://localhost:3307/"
      // servidor
             //    private String user = "maxuser";
             //    private String pass = "Maxmail123*";
             //    private String db = "maxmail";
             //    private String url = "jdbc:mysql://192.168.10.3:3306/"
     // poseidon
-            //    private String user = "root";
-            //    private String pass = "p0s31d0n";
-            //    private String db = "maxmail";
-            //    private String url = "jdbc:mysql://localhost:3306/"
+                private String user = "root";
+                private String pass = "p0s31d0n";
+                private String db = "maxmail";
+                private String url = "jdbc:mysql://localhost:3306/"
             + db + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&"
             + "useLegacyDatetimeCode=false&serverTimezone=America/Mexico_City&useSSL=false&"
             + "allowPublicKeyRetrieval=true";

@@ -5,6 +5,7 @@
  */
 package views;
 
+import controllers.CaptureController;
 import controllers.ContactoController;
 import controllers.MensajeriaController;
 import controllers.MensajeriaSelecController;
@@ -74,6 +75,8 @@ public final class jprincipal extends javax.swing.JFrame {
         jMServidor = new javax.swing.JMenuItem();
         jSeparator9 = new javax.swing.JPopupMenu.Separator();
         jMSubirFw = new javax.swing.JMenuItem();
+        jSeparator10 = new javax.swing.JPopupMenu.Separator();
+        jMCapture = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMMensajeria = new javax.swing.JMenuItem();
         jSeparator4 = new javax.swing.JPopupMenu.Separator();
@@ -131,13 +134,6 @@ public final class jprincipal extends javax.swing.JFrame {
         tiempo.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         tiempo.setOpaque(true);
 
-        Desktop.setLayer(Creditos, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Desktop.setLayer(version, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Desktop.setLayer(Fondo_Principal, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Desktop.setLayer(versionCD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Desktop.setLayer(Perido, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        Desktop.setLayer(tiempo, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
         javax.swing.GroupLayout DesktopLayout = new javax.swing.GroupLayout(Desktop);
         Desktop.setLayout(DesktopLayout);
         DesktopLayout.setHorizontalGroup(
@@ -166,10 +162,14 @@ public final class jprincipal extends javax.swing.JFrame {
                     .addComponent(Perido)
                     .addComponent(tiempo)))
         );
+        Desktop.setLayer(Creditos, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(version, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(Fondo_Principal, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         Fondo_Principal.getAccessibleContext().setAccessibleParent(jLayeredPane1);
-
-        jLayeredPane1.setLayer(Desktop, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(versionCD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(Perido, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        Desktop.setLayer(tiempo, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
@@ -181,6 +181,7 @@ public final class jprincipal extends javax.swing.JFrame {
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(Desktop)
         );
+        jLayeredPane1.setLayer(Desktop, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         jMenuBar1.setBackground(new java.awt.Color(0, 0, 0));
         jMenuBar1.setForeground(new java.awt.Color(255, 255, 255));
@@ -285,6 +286,16 @@ public final class jprincipal extends javax.swing.JFrame {
             }
         });
         jConfiguracion.add(jMSubirFw);
+        jConfiguracion.add(jSeparator10);
+
+        jMCapture.setFont(new java.awt.Font("Garamond", 1, 14)); // NOI18N
+        jMCapture.setText("Capturas Web");
+        jMCapture.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMCaptureActionPerformed(evt);
+            }
+        });
+        jConfiguracion.add(jMCapture);
 
         jMenuBar1.add(jConfiguracion);
 
@@ -461,6 +472,18 @@ public final class jprincipal extends javax.swing.JFrame {
          */
     }//GEN-LAST:event_jMSubirFwActionPerformed
 
+    private void jMCaptureActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCaptureActionPerformed
+        if (login.getPermiso() == 1) {
+            jCapture viewCapture = new jCapture();
+            CaptureController captureController = new CaptureController(viewCapture);
+            this.Desktop.add(viewCapture);
+            ValidForm.centeForm(viewCapture, Desktop);
+            viewCapture.show();
+        } else {
+            JOptionPane.showMessageDialog(null, "No tiene permiso para realizar esta acción", "MAXMAIL", JOptionPane.QUESTION_MESSAGE);
+        }
+    }//GEN-LAST:event_jMCaptureActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -504,6 +527,7 @@ public final class jprincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jCerrarSesion;
     private javax.swing.JMenu jConfiguracion;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JMenuItem jMCapture;
     private javax.swing.JMenuItem jMMensajeria;
     private javax.swing.JMenuItem jMParametro;
     private javax.swing.JMenuItem jMPlantilla;
@@ -518,6 +542,7 @@ public final class jprincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jOpciones;
     private javax.swing.JMenuItem jSalir;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
